@@ -1,0 +1,3 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^\R\sample_data_edits.R$

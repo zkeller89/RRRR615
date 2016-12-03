@@ -1,0 +1,72 @@
+RRLM = function(X,Y,lambda,r=NULL,CV=NULL,INT=TRUE,Yfit=FALSE){
+  
+  if(!is.null(r) && !is.null(CV)){
+    return("Error: Only one of r and CV should be specified")
+    break
+  }
+  
+  n = nrow(X)
+  
+  if(INT==TRUE){
+    X = cbind(rep(1,n),X)
+  }
+  p = ncol(X)
+  q = ncol(Y)
+  
+  if(!is.null(r) && r > q){
+    return("Error: r must be less than or equal to the number of columns of Y")
+    break
+  }
+  
+  if(nrow(Y) != n){
+    return("Error: Dimensions do not match")
+    break
+  }
+  v = colnames(X)
+  if(!is.null(v))
+  {
+    v = c("intercept",v)
+  }
+  else
+  {
+    v = "intercept"
+    for(i in 1:(p-1))
+    {
+      s = paste("V",i,sep = "")
+      v = c(v,s)
+    }
+  }
+  add <- sqrt(lambda)*diag(p)
+  
+  X.star <- rbind(X,add)
+  Y.star <- rbind(Y,matrix(0,p,q))
+  
+  sv = mulr(X.star,Y.star)
+  
+  if(!is.null(r)){
+    V = sv[[2]][,1:r]
+  } else{
+    if(is.null(CV)){
+      CV = 0.9
+    }
+    ei = sv[[1]]^2
+    r = min(which((cumsum(ei)/sum(ei))>=CV))
+    V = sv[[2]][,1:r]
+  }
+  
+  lambda.mat = lambda*diag(p)
+  
+  beta = Betafit(X,lambda.mat,Y,V,p)
+  rownames(beta) = v
+  if(Yfit==TRUE){
+    Yfit = Yfit(X,beta,Y,n)
+    output = list(beta,Yfit[1],Yfit[2])
+    names(output) = c("beta","Yfit","Error")
+    return(output)
+  } else{
+    output = list(beta)
+    names(output) = c("beta")
+    return(output)
+  }
+  
+}

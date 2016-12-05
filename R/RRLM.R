@@ -1,3 +1,14 @@
+#' Create a Reduced Rank Ridge Regression Model
+#' 
+#' @param X The design matrix for our model
+#' @param Y The response matrix for our model
+#' @param lambda The penalizing term for our model
+#' @param r The rank to which we believe our Beta matrix to be; only r or CV should be specified
+#' @param CV The proportion of the sum of the singular values needed for our reduced rank; only r or CV should be specified
+#' @param INT A boolean indicating if an intercept term is desired in our model
+#' @param Yfit A boolean indicating if fitted Y values and their errors should be returned
+
+
 RRLM = function(X,Y,lambda,r=NULL,CV=NULL,INT=TRUE,Yfit=FALSE){
   
   if(!is.null(r) && !is.null(CV)){
@@ -59,8 +70,8 @@ RRLM = function(X,Y,lambda,r=NULL,CV=NULL,INT=TRUE,Yfit=FALSE){
   beta = Betafit(X,lambda.mat,Y,V,p)
   rownames(beta) = v
   if(Yfit==TRUE){
-    Yfit = Yfit(X,beta,Y,n)
-    output = list(beta,Yfit[1],Yfit[2])
+    fit = Yfit(X,beta,Y,n)
+    output = list(beta,fit[1],fit[2])
     names(output) = c("beta","Yfit","Error")
     return(output)
   } else{

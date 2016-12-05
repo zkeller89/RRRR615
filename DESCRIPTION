@@ -3,12 +3,19 @@ Type: Package
 Title: Reduced Rank Ridge Regression
 Version: 1.0
 Date: 2016-12-03
-Authors@R: c(
-  person("Anwesha", "Bhattacharyya", email = "anwebha@umich.edu", role = "aut"),
-  person("Timothy", "Lycurgus", email = "tlycurgu@umich.edu", role = "aut"),
-  person("Zachary", "Keller", email = "zkeller@umich.edu", role = c("aut", "cre")))
-Description: This package implements the Reduced Rank Ridge Regression for multivariate linear regression, 
-    put forth by \href{http://dept.stat.lsa.umich.edu/~jizhu/pubs/Mukherjee-SADM11.pdf}{Mukherjee and Zhu (2011)}.
-License: What license is it under?
-Imports: Rcpp (>= 0.12.8), RcppEigen (>= 0.3.2.9.0), MASS
+Authors@R: c(person("Anwesha", "Bhattacharyya", role = "aut", email = "anwebha@umich.edu"),
+             person("Timothy", "Lycurgus", role = "aut", email = "tlycurgu@umich.edu"),
+             person("Zachary", "Keller", role = c("aut", "cre"), email = "zkeller@umich.edu"))
+Author: Anwesha Bhattacharyya [aut],
+  Timothy Lycurgus [aut],
+  Zachary Keller [aut, cre]
+Description: This package implements the Reduced Rank Ridge Regression
+    for multivariate linear regression, put forth by \href{http://
+    dept.stat.lsa.umich.edu/~jizhu/pubs/Mukherjee-SADM11.pdf}{Mukherjee and Zhu
+    (2011)}.
+Imports:
+    Rcpp (>= 0.12.8),
+    RcppEigen (>= 0.3.2.9.0),
+    MASS
 LinkingTo: Rcpp, RcppEigen
+RoxygenNote: 5.0.1

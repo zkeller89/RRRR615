@@ -1,5 +1,5 @@
 #' Create a Reduced Rank Ridge Regression Model
-#' 
+#'
 #' @param X The design matrix for our model
 #' @param Y The response matrix for our model
 #' @param lambda The penalizing term for our model

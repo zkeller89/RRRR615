@@ -9,26 +9,24 @@
 \packageDescription{RRRR615}
 }
 \details{
-
-The DESCRIPTION file:
-\packageDESCRIPTION{RRRR615}
-\packageIndices{RRRR615}
-~~ An overview of how to use the package, including the most important functions ~~
+Please type "?RRLM" for documentation on the Reduced Rank Linear Model function.
 }
 \author{
 \packageAuthor{RRRR615}
 
 Maintainer: \packageMaintainer{RRRR615}
 }
-\references{
-~~ Literature or other references for background information ~~
+\references{\href{http://dept.stat.lsa.umich.edu/~jizhu/pubs/Mukherjee-SADM11.pdf}{Mukherjee and Zhu(2011)}
 }
-~~ Optionally other standard keywords, one per line, from file KEYWORDS in the R documentation directory ~~
 \keyword{ package }
-\seealso{
-~~ Optional links to other man pages, e.g. ~~
-~~ \code{\link[<pkg>:<pkg>-package]{<pkg>}} ~~
-}
 \examples{
-~~ simple examples of the most important functions ~~
+data(method1)
+my_RRLM <- RRLM(X = method1$DM,
+                Y = method1$Y,
+                lambda = 0.05,
+                r = 15,
+                INT = TRUE,
+                Yfit = TRUE)
+
+names(my_RRLM)
 }

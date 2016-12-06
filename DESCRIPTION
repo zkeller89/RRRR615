@@ -6,9 +6,7 @@ Date: 2016-12-03
 Authors@R: c(person("Anwesha", "Bhattacharyya", role = "aut", email = "anwebha@umich.edu"),
              person("Timothy", "Lycurgus", role = "aut", email = "tlycurgu@umich.edu"),
              person("Zachary", "Keller", role = c("aut", "cre"), email = "zkeller@umich.edu"))
-Author: Anwesha Bhattacharyya [aut],
-  Timothy Lycurgus [aut],
-  Zachary Keller [aut, cre]
+Maintainer: Zachary Keller <zkeller@umich.edu>
 Description: This package implements the Reduced Rank Ridge Regression
     for multivariate linear regression, put forth by \href{http://
     dept.stat.lsa.umich.edu/~jizhu/pubs/Mukherjee-SADM11.pdf}{Mukherjee and Zhu

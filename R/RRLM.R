@@ -7,7 +7,8 @@
 #' @param CV The proportion of the sum of the singular values needed for our reduced rank; only r or CV should be specified
 #' @param INT A boolean indicating if an intercept term is desired in our model
 #' @param Yfit A boolean indicating if fitted Y values and their errors should be returned
-
+#' 
+#' @export RRLM
 
 RRLM = function(X,Y,lambda,r=NULL,CV=NULL,INT=TRUE,Yfit=FALSE){
   

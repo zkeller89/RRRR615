@@ -22,6 +22,8 @@ RRLM = function(X,Y,lambda,r=NULL,CV=NULL,INT=TRUE,Yfit=FALSE){
   }
   
   n = nrow(X)
+  op = ncol(X)
+  intercept = NULL
   
   if(INT==TRUE){
     X = cbind(rep(1,n),X)
@@ -39,18 +41,18 @@ RRLM = function(X,Y,lambda,r=NULL,CV=NULL,INT=TRUE,Yfit=FALSE){
     return("Error: Dimensions do not match")
     break
   }
-  v = colnames(X)
-  if(!is.null(v))
+  cn = colnames(X)
+  if(!is.null(cn))
   {
-    v = c(intercept,v)
+    cn = c(intercept,cn)
   }
   else
   {
-    v = intercept
-    for(i in 1:(p-1))
+    cn = intercept
+    for(i in 1:(op))
     {
       s = paste("V",i,sep = "")
-      v = c(v,s)
+      cn = c(cn,s)
     }
   }
   add <- sqrt(lambda)*diag(p)
@@ -88,7 +90,3 @@ RRLM = function(X,Y,lambda,r=NULL,CV=NULL,INT=TRUE,Yfit=FALSE){
   
 }
 
-
-.onUnload <- function (libpath) {
-  library.dynam.unload("RRRR615", libpath)
-}

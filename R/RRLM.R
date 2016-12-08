@@ -87,3 +87,8 @@ RRLM = function(X,Y,lambda,r=NULL,CV=NULL,INT=TRUE,Yfit=FALSE){
   }
   
 }
+
+
+.onUnload <- function (libpath) {
+  library.dynam.unload("RRRR615", libpath)
+}

@@ -24,7 +24,6 @@ RRLM = function(X,Y,lambda,r=NULL,CV=NULL,INT=TRUE,Yfit=FALSE){
   n = nrow(X)
   op = ncol(X)
   intercept = NULL
-  
   if(INT==TRUE){
     X = cbind(rep(1,n),X)
     intercept = "intercept"
@@ -76,7 +75,7 @@ RRLM = function(X,Y,lambda,r=NULL,CV=NULL,INT=TRUE,Yfit=FALSE){
   lambda.mat = lambda*diag(p)
   
   beta = Betafit(X,lambda.mat,Y,V,p)
-  rownames(beta) = v
+  rownames(beta) = cn
   if(Yfit==TRUE){
     fit = Yfit(X,beta,Y,n)
     output = list(beta,fit[1],fit[2])

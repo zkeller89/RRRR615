@@ -13,13 +13,13 @@ RRLM(X, Y, lambda, r = NULL, CV = NULL, INT = TRUE, Yfit = FALSE)
 
 \item{lambda}{The penalizing term for our model}
 
-\item{r}{The rank to which we believe our Beta matrix to be; only r or CV should be specified}
+\item{r}{The rank of the reduced rank estimate of the response variable}
 
-\item{CV}{The proportion of the sum of the singular values needed for our reduced rank; only r or CV should be specified}
+\item{CV}{The proportion of variation of response variable that the user wants to be explained through the reduced rank estimate. Accepts value in the interval (0,1). User can specify either r or cv but not both. If neither is specified then r is automatically selected to be the number of dimensions that explain 90\% variation of the response variable.}
 
 \item{INT}{A boolean indicating if an intercept term is desired in our model}
 
-\item{Yfit}{A boolean indicating if fitted Y values and their errors should be returned}
+\item{Yfit}{A boolean indicating if fitted Y values and their errors should be returned. If Y values and the residual sum of squares should be returned. Here RSS is  given by the frobenius norm of error matrix divided by the number of observations.}
 }
 \description{
 Create a Reduced Rank Ridge Regression Model

@@ -20,9 +20,9 @@ Maintainer: \packageMaintainer{RRRR615}
 }
 \keyword{ package }
 \examples{
-data(method1)
-my_RRLM <- RRLM(X = method1$DM,
-                Y = method1$Y,
+data(model1)
+my_RRLM <- RRLM(X = model1$DM,
+                Y = model1$Y,
                 lambda = 0.05,
                 r = 15,
                 INT = TRUE,

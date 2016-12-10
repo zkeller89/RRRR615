@@ -9,7 +9,7 @@
 \packageDescription{RRRR615}
 }
 \details{
-Please type "?RRLM" for documentation on the Reduced Rank Linear Model function.
+Please type \code{?RRLM} for documentation on the Reduced Rank Linear Model function. Note, sample data has been made available as \code{model1}, \code{model2}, and \code{model3}, and can be accessed with \code{data([dataset name])}. Documentation available with the \code{?} operator.
 }
 \author{
 \packageAuthor{RRRR615}

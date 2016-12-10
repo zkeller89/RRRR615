@@ -46,9 +46,9 @@ Y1 <- Xs %*% betas1 + rnorm(n = N * Q, mean = 0, sd = sqrt(var_y))
 Y2 <- Xs %*% betas2 + rnorm(n = N * Q, mean = 0, sd = sqrt(var_y))
 Y3 <- Xs %*% betas3 + rnorm(n = N * Q, mean = 0, sd = sqrt(var_y))
 
-method1 <- list(Y = Y1, DM = Xs, BETA = betas1)
-method2 <- list(Y = Y2, DM = Xs, BETA = betas2)
-method3 <- list(Y = Y3, DM = Xs, BETA = betas3)
+model1 <- list(Y = Y1, DM = Xs, BETA = betas1)
+model2 <- list(Y = Y2, DM = Xs, BETA = betas2)
+model3 <- list(Y = Y3, DM = Xs, BETA = betas3)
 
 ########### Create function to run this stuff with different parameters
 
